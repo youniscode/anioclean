@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#093A7D" />
+  <title>ANIOCLEAN — La propreté professionnelle</title>
+  <meta name="description" content="ANIOCLEAN accompagne les professionnels avec des solutions de nettoyage fiables, flexibles et adaptées : hôtels, bureaux, chantiers, hangars, locaux commerciaux et supermarchés." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --navy:#093A7D;
+      --royal:#0155B2;
+      --blue:#149FFC;
+      --light-blue:#50BDFB;
+      --ice:#B8DFF4;
+      --ink:#0F172A;
+      --muted:#64748B;
+      --line:#E5EAF1;
+      --off:#F7FAFC;
+      --white:#FFFFFF;
+      --shadow:0 18px 60px rgba(15,23,42,.10);
+      --radius:24px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Inter",sans-serif;
+      color:var(--ink);
+      background:var(--white);
+      line-height:1.55;
+    }
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    button,input,textarea,select{font:inherit}
+    .container{width:min(1180px,calc(100% - 40px));margin:auto}
+    .eyebrow{
+      color:var(--royal);
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      font-weight:800;
+      font-size:.78rem;
+      margin-bottom:10px;
+    }
+    h1,h2,h3{font-family:"Montserrat",sans-serif;line-height:1.08;margin:0}
+    h1{font-size:clamp(2.6rem,6vw,5.2rem);letter-spacing:-.045em}
+    h2{font-size:clamp(2rem,4vw,3.25rem);letter-spacing:-.035em}
+    h3{font-size:1.15rem}
+    p{margin:0;color:#475569}
+    .section{padding:92px 0}
+    .section-head{max-width:760px;margin-bottom:42px}
+    .section-head p{margin-top:14px;font-size:1.04rem}
+
+    /* Header */
+    header{
+      position:sticky;top:0;z-index:30;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(226,232,240,.8);
+    }
+    .nav{
+      height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px;
+    }
+    .brand{display:flex;align-items:center;gap:10px;min-width:210px}
+    .brand img{
+      width:230px;
+      height:auto;
+      object-fit:contain;
+      object-position:left center;
+    }
+    .nav-links{display:flex;gap:28px;align-items:center;font-size:.94rem;font-weight:700}
+    .nav-links a{position:relative}
+    .nav-links a:not(.btn)::after{
+      content:"";position:absolute;left:0;right:100%;bottom:-9px;height:2px;background:var(--blue);transition:.2s
+    }
+    .nav-links a:hover::after{right:0}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      border-radius:12px;padding:14px 20px;font-weight:800;border:1px solid transparent;
+      transition:.2s ease;cursor:pointer;
+    }
+    .btn-primary{
+      background:linear-gradient(135deg,var(--royal),var(--blue));
+      color:#fff;box-shadow:0 10px 25px rgba(1,85,178,.20);
+    }
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(1,85,178,.28)}
+    .btn-outline{border-color:#BAD7F8;color:var(--navy);background:#fff}
+    .btn-outline:hover{border-color:var(--blue);background:#F4FAFF}
+    .menu{display:none;border:0;background:none;font-size:1.5rem;color:var(--navy);cursor:pointer}
+
+    /* Hero */
+    .hero{
+      position:relative;overflow:hidden;
+      background:
+        radial-gradient(circle at 82% 18%,rgba(80,189,251,.26),transparent 28%),
+        radial-gradient(circle at 65% 75%,rgba(20,159,252,.12),transparent 30%),
+        linear-gradient(135deg,#fff 0%,#fff 55%,#F1F8FF 100%);
+    }
+    .hero::before{
+      content:"";position:absolute;width:470px;height:470px;border-radius:50%;
+      border:1px solid rgba(20,159,252,.15);right:-170px;top:-120px;
+    }
+    .hero-grid{
+      min-height:690px;display:grid;grid-template-columns:1.03fr .97fr;
+      gap:60px;align-items:center;padding:54px 0 70px;
+    }
+    .hero-copy p{max-width:650px;margin-top:26px;font-size:1.08rem}
+    .accent{color:var(--royal)}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+    .trust-line{
+      display:flex;gap:22px;flex-wrap:wrap;margin-top:34px;color:#334155;font-weight:600;font-size:.9rem
+    }
+    .trust-line span{display:flex;gap:8px;align-items:center}
+    .check{width:22px;height:22px;border-radius:50%;display:inline-grid;place-items:center;background:#EAF6FF;color:var(--royal);font-weight:900}
+    .hero-card{
+      position:relative;border-radius:34px;min-height:520px;overflow:hidden;
+      background:#F8FCFF;
+      border:1px solid #DDECF9;box-shadow:var(--shadow);
+      padding:38px;
+    }
+    .hero-card::before{
+      content:"";position:absolute;inset:0;z-index:1;
+      background:
+        linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,0) 32%),
+        linear-gradient(0deg,rgba(9,58,125,.18),rgba(9,58,125,0) 42%);
+      pointer-events:none;
+    }
+    .hero-photo{
+      position:absolute;inset:0;width:100%;height:100%;
+      object-fit:cover;object-position:center;
+    }
+    .hero-logo{
+      width:min(420px,88%);
+      filter:drop-shadow(0 25px 35px rgba(1,85,178,.16));
+      position:relative;z-index:2;
+    }
+    .hero-mini{
+      position:absolute;left:28px;right:28px;bottom:26px;z-index:3;
+      background:rgba(255,255,255,.90);backdrop-filter:blur(10px);
+      border:1px solid rgba(255,255,255,.88);box-shadow:0 10px 30px rgba(15,23,42,.10);
+      border-radius:18px;padding:16px 18px;display:flex;justify-content:space-between;gap:18px;align-items:center
+    }
+    .hero-mini strong{font-family:"Montserrat",sans-serif;color:var(--navy)}
+    .hero-mini small{display:block;color:#64748B;margin-top:3px}
+
+    /* proof strip */
+    .proof{margin-top:-34px;position:relative;z-index:6}
+    .proof-grid{
+      display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border-radius:20px;
+      border:1px solid var(--line);box-shadow:var(--shadow);padding:24px;
+    }
+    .proof-item{padding:8px 20px;border-right:1px solid var(--line);display:flex;gap:14px;align-items:flex-start}
+    .proof-item:last-child{border-right:0}
+    .icon{
+      width:44px;height:44px;flex:0 0 44px;border-radius:13px;
+      display:grid;place-items:center;background:#EAF6FF;color:var(--royal);font-size:1.2rem;font-weight:900
+    }
+    .proof-item strong{display:block;color:var(--navy);font-size:.95rem}
+    .proof-item small{display:block;color:#64748B;margin-top:3px}
+
+    /* Sector cards */
+    .sectors{background:linear-gradient(#fff,#F8FBFE)}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .card{
+      border:1px solid var(--line);background:#fff;border-radius:22px;
+      min-height:100%;transition:.22s ease;position:relative;overflow:hidden;
+      box-shadow:0 8px 24px rgba(15,23,42,.04);
+    }
+    .card:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(15,23,42,.10);border-color:#CFE7FB}
+    .card-photo{
+      width:100%;aspect-ratio:16/9;object-fit:cover;display:block;
+      background:#EAF4FD;
+    }
+    .card-body{padding:22px 24px 24px}
+    .card h3{margin-bottom:10px;color:var(--navy)}
+    .card p{font-size:.94rem}
+    .card-footer{
+      margin-top:16px;display:flex;align-items:center;justify-content:space-between;
+      color:var(--royal);font-weight:800;font-size:.92rem;
+    }
+    .card-arrow{
+      width:36px;height:36px;border-radius:12px;display:grid;place-items:center;
+      background:#EFF7FF;color:var(--royal);font-size:1rem;flex:0 0 36px;
+    }
+    .card-badge{
+      position:absolute;top:14px;left:14px;z-index:2;
+      background:rgba(9,58,125,.92);color:#fff;border:1px solid rgba(255,255,255,.18);
+      border-radius:999px;padding:8px 12px;font-size:.72rem;font-weight:800;
+      letter-spacing:.03em;backdrop-filter:blur(6px);
+    }
+
+    /* About */
+    .about-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:70px;align-items:center}
+    .about-visual{
+      min-height:480px;border-radius:28px;overflow:hidden;position:relative;
+      box-shadow:var(--shadow);
+      background:#0A2144;
+      display:flex;align-items:flex-end;
+    }
+    .about-visual::before{
+      content:"";position:absolute;inset:0;z-index:1;
+      background:
+        linear-gradient(180deg,rgba(9,58,125,.08),rgba(9,58,125,0) 35%),
+        linear-gradient(0deg,rgba(4,27,55,.88),rgba(4,27,55,.18) 52%,rgba(4,27,55,0) 76%);
+      pointer-events:none;
+    }
+    .about-photo{
+      position:absolute;inset:0;width:100%;height:100%;
+      object-fit:cover;object-position:center;
+    }
+    .about-quote{
+      position:relative;z-index:2;padding:32px 34px 30px;color:#fff;
+    }
+    .about-visual blockquote{
+      margin:0;color:#fff;font-family:"Montserrat",sans-serif;font-size:1.55rem;line-height:1.3
+    }
+    .about-visual small{display:block;color:#D6E7F8;margin-top:10px}
+    .bullets{display:grid;gap:18px;margin-top:30px}
+    .bullet{display:flex;gap:14px}
+    .bullet .check{flex:0 0 22px;margin-top:3px}
+    .bullet strong{display:block;color:var(--ink)}
+    .bullet p{font-size:.95rem;margin-top:4px}
+
+    /* Process */
+    .process{background:var(--off)}
+    .steps{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:28px;
+      position:relative;
+    }
+    .steps::before{
+      content:"";position:absolute;left:8%;right:8%;top:34px;height:2px;
+      background:linear-gradient(90deg,var(--ice),var(--blue),var(--ice));
+      z-index:0;
+    }
+    .step{
+      background:#fff;border-radius:22px;border:1px solid var(--line);padding:30px;
+      position:relative;z-index:1;transition:.22s ease;
+      box-shadow:0 8px 24px rgba(15,23,42,.04);
+      overflow:hidden;
+    }
+    .step::before{
+      content:"";position:absolute;left:0;top:0;width:100%;height:4px;
+      background:linear-gradient(90deg,var(--royal),var(--blue));
+      opacity:.75;
+    }
+    .step:hover{
+      transform:translateY(-4px);
+      border-color:#CFE7FB;
+      box-shadow:0 18px 40px rgba(15,23,42,.09);
+    }
+    .step-head{
+      display:flex;align-items:center;gap:14px;margin-bottom:22px;
+    }
+    .step-num{
+      width:52px;height:52px;border-radius:50%;
+      background:linear-gradient(135deg,var(--navy),var(--royal));color:#fff;
+      display:grid;place-items:center;font-family:"Montserrat",sans-serif;
+      font-weight:800;font-size:1rem;flex:0 0 52px;
+      box-shadow:0 8px 20px rgba(1,85,178,.18);
+    }
+    .step-icon{
+      width:44px;height:44px;border-radius:14px;background:#EEF7FF;color:var(--royal);
+      display:grid;place-items:center;flex:0 0 44px;
+    }
+    .step-icon svg{width:22px;height:22px;stroke:currentColor}
+    .step p{margin-top:9px}
+    @media (max-width:980px){
+      .steps::before{display:none}
+    }
+
+    /* CTA */
+    .cta-wrap{padding:88px 0}
+    .cta{
+      border-radius:30px;padding:54px;display:grid;grid-template-columns:1.25fr .75fr;gap:30px;align-items:center;
+      background:
+       radial-gradient(circle at 85% 0%,rgba(80,189,251,.45),transparent 28%),
+       linear-gradient(135deg,#062F68,var(--royal));
+      color:#fff;overflow:hidden;position:relative;
+    }
+    .cta h2{color:#fff}
+    .cta p{color:#DCEBFA;margin-top:14px;max-width:720px}
+    .cta-actions{display:flex;justify-content:flex-end;gap:12px;flex-wrap:wrap}
+    .cta .btn-light{background:#fff;color:var(--navy)}
+    .cta .btn-whatsapp{background:#20B95A;color:#fff}
+
+    /* Contact */
+    .contact-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:54px}
+    .contact-list{display:grid;gap:18px;margin-top:30px}
+    .contact-row{display:flex;gap:14px;align-items:flex-start}
+    .contact-row strong{display:block;color:var(--navy)}
+    .contact-row span{color:#64748B;font-size:.94rem}
+    form{
+      background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);
+      border-radius:24px;padding:30px
+    }
+    .field-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    label{display:block;font-weight:700;font-size:.88rem;color:#334155;margin-bottom:7px}
+    input,textarea,select{
+      width:100%;border:1px solid #D7E0EA;border-radius:12px;padding:13px 14px;color:var(--ink);background:#fff;outline:none
+    }
+    input:focus,textarea:focus,select:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(20,159,252,.10)}
+    textarea{resize:vertical;min-height:130px}
+    .field{margin-bottom:16px}
+    .form-note{font-size:.78rem;color:#94A3B8;margin-top:12px}
+
+    /* Footer */
+    footer{background:#061F43;color:#DCE7F4;padding:54px 0 28px}
+    .footer-grid{display:grid;grid-template-columns:1.35fr .8fr .8fr 1fr;gap:38px}
+    .footer-brand{
+      display:inline-flex;align-items:center;
+      background:rgba(255,255,255,.97);
+      border:1px solid rgba(255,255,255,.15);
+      border-radius:16px;
+      padding:10px 14px;
+      margin-bottom:20px;
+      box-shadow:0 12px 30px rgba(0,0,0,.10);
+    }
+    .footer-logo{width:235px;margin:0}
+    footer p,footer a{color:#B7C9DD;font-size:.9rem}
+    footer a{transition:.2s ease}
+    footer a:hover{color:#fff}
+    footer h4{font-family:"Montserrat",sans-serif;margin:0 0 16px;color:#fff}
+    .footer-links{display:grid;gap:9px}
+    .copyright{
+      border-top:1px solid rgba(255,255,255,.10);
+      margin-top:40px;padding-top:22px;
+      color:#8FA8C2;font-size:.82rem;
+    }
+
+    /* Floating WhatsApp */
+    .wa-float{
+      position:fixed;right:22px;bottom:22px;z-index:50;width:58px;height:58px;border-radius:50%;
+      background:#20B95A;color:#fff;display:grid;place-items:center;font-size:1.7rem;
+      box-shadow:0 12px 30px rgba(32,185,90,.35);border:3px solid #fff;
+    }
+    .wa-float:hover{transform:translateY(-2px)}
+
+    @media (max-width: 980px){
+      .nav-links{display:none;position:absolute;left:20px;right:20px;top:78px;background:white;border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch}
+      .nav-links.open{display:flex}
+      .menu{display:block}
+      .hero-grid,.about-grid,.contact-grid,.cta{grid-template-columns:1fr}
+      .hero-grid{min-height:auto;padding:48px 0 70px}
+      .hero-card{min-height:430px}
+      .proof-grid{grid-template-columns:1fr 1fr}
+      .proof-item:nth-child(2){border-right:0}
+      .proof-item:nth-child(-n+2){border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:12px}
+      .cards{grid-template-columns:1fr 1fr}
+      .steps{grid-template-columns:1fr}
+      .cta-actions{justify-content:flex-start}
+      .footer-grid{grid-template-columns:1fr 1fr}
+    }
+
+    @media (max-width: 640px){
+      .container{width:min(100% - 28px,1180px)}
+      .nav{height:70px}
+      .brand img{width:190px;height:auto}
+      .nav-links{top:70px}
+      .section{padding:70px 0}
+      h1{font-size:2.65rem}
+      .hero-grid{gap:34px}
+      .hero-card{min-height:365px;padding:22px}
+      .hero-mini{left:16px;right:16px;bottom:16px;display:block}
+      .hero-mini small{margin-top:5px}
+      .proof{margin-top:-18px}
+      .proof-grid{grid-template-columns:1fr;padding:12px}
+      .proof-item{border-right:0!important;border-bottom:1px solid var(--line)!important;padding:16px!important;margin:0!important}
+      .proof-item:last-child{border-bottom:0!important}
+      .cards{grid-template-columns:1fr}
+      .field-grid{grid-template-columns:1fr}
+      .cta{padding:34px 24px}
+      .cta-actions{display:grid}
+      .footer-grid{grid-template-columns:1fr}
+      .wa-float{width:54px;height:54px;right:16px;bottom:16px}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="#accueil" aria-label="ANIOCLEAN - Accueil">
+      <img src="assets/anioclean-logo-horizontal-transparent.png" alt="ANIOCLEAN — La propreté professionnelle">
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#accueil">Accueil</a>
+      <a href="#services">Services</a>
+      <a href="#secteurs">Secteurs</a>
+      <a href="#apropos">À propos</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="btn btn-primary">Demander un devis →</a>
+    </nav>
+    <button class="menu" id="menuBtn" aria-label="Ouvrir le menu">☰</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="accueil">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow">ANIOCLEAN · Propreté professionnelle</div>
+        <h1>La propreté au service de <span class="accent">votre activité.</span></h1>
+        <p>
+          ANIOCLEAN accompagne les professionnels avec des prestations de nettoyage fiables,
+          flexibles et adaptées à chaque environnement — de l’hôtellerie aux bureaux,
+          chantiers, entrepôts et espaces commerciaux.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">Demander un devis →</a>
+          <a class="btn btn-outline whatsapp-link" href="#">WhatsApp ↗</a>
+        </div>
+        <div class="trust-line">
+          <span><i class="check">✓</i> Intervention adaptée</span>
+          <span><i class="check">✓</i> Équipes professionnelles</span>
+          <span><i class="check">✓</i> Suivi qualité</span>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img class="hero-photo" src="assets/hero-hotel-lobby-cleaning.png" alt="Agent ANIOCLEAN nettoyant le hall d’un hôtel moderne">
+        <div class="hero-mini">
+          <div>
+            <strong>Une image impeccable, chaque jour.</strong>
+            <small>Des solutions pensées pour vos contraintes professionnelles.</small>
+          </div>
+          <span class="icon">✦</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="proof">
+    <div class="container proof-grid">
+      <div class="proof-item"><span class="icon">⏱</span><div><strong>Réactivité</strong><small>Un service organisé autour de vos besoins.</small></div></div>
+      <div class="proof-item"><span class="icon">◆</span><div><strong>Qualité</strong><small>Des standards clairs et un suivi régulier.</small></div></div>
+      <div class="proof-item"><span class="icon">▦</span><div><strong>Flexibilité</strong><small>Fréquences et horaires selon votre activité.</small></div></div>
+      <div class="proof-item"><span class="icon">✓</span><div><strong>Fiabilité</strong><small>Une organisation conçue pour durer.</small></div></div>
+    </div>
+  </div>
+
+  <section class="section sectors" id="secteurs">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Nos domaines d’intervention</div>
+        <h2>Des solutions adaptées à chaque environnement professionnel.</h2>
+        <p>Une approche sur mesure, parce qu’un hôtel, un chantier ou un entrepôt n’ont ni les mêmes contraintes ni les mêmes priorités.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <span class="card-badge">Secteur prioritaire</span>
+          <img class="card-photo" src="assets/sector-hotels.png" alt="Nettoyage haut de gamme en hôtellerie">
+          <div class="card-body">
+            <h3>Hôtels & hôtellerie</h3>
+            <p>Chambres, parties communes, espaces d’accueil et zones de service avec une exigence constante de présentation.</p>
+            <div class="card-footer"><span>Service premium</span><span class="card-arrow">→</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img class="card-photo" src="assets/sector-offices.png" alt="Nettoyage de bureaux modernes">
+          <div class="card-body">
+            <h3>Bureaux</h3>
+            <p>Des espaces de travail propres, sains et agréables pour vos collaborateurs, visiteurs et partenaires.</p>
+            <div class="card-footer"><span>Environnement sain</span><span class="card-arrow">→</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img class="card-photo" src="assets/sector-construction.png" alt="Nettoyage de fin de chantier">
+          <div class="card-body">
+            <h3>Chantiers</h3>
+            <p>Nettoyage de fin de chantier, remise en état et préparation des espaces avant livraison ou mise en service.</p>
+            <div class="card-footer"><span>Remise en état</span><span class="card-arrow">→</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img class="card-photo" src="assets/sector-warehouse.png" alt="Nettoyage d’entrepôts et hangars">
+          <div class="card-body">
+            <h3>Hangars & entrepôts</h3>
+            <p>Nettoyage de grandes surfaces, zones de stockage, quais et espaces soumis à des contraintes professionnelles.</p>
+            <div class="card-footer"><span>Grandes surfaces</span><span class="card-arrow">→</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img class="card-photo" src="assets/sector-retail.png" alt="Nettoyage de locaux commerciaux">
+          <div class="card-body">
+            <h3>Locaux commerciaux</h3>
+            <p>Boutiques, magasins et espaces recevant du public, avec une attention particulière à l’image de votre établissement.</p>
+            <div class="card-footer"><span>Image impeccable</span><span class="card-arrow">→</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img class="card-photo" src="assets/sector-supermarket.png" alt="Nettoyage de supermarchés">
+          <div class="card-body">
+            <h3>Supermarchés</h3>
+            <p>Entretien régulier et hygiène adaptée aux espaces à forte fréquentation et aux exigences de la distribution.</p>
+            <div class="card-footer"><span>Hygiène continue</span><span class="card-arrow">→</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="container about-grid">
+      <div class="about-visual">
+        <img class="about-photo" src="assets/about-quality-inspection.png" alt="Inspection qualité ANIOCLEAN dans un espace professionnel">
+        <div class="about-quote">
+          <blockquote>« La propreté professionnelle ne se voit pas seulement : elle se ressent dans la qualité de chaque espace. »</blockquote>
+          <small>ANIOCLEAN — La propreté professionnelle</small>
+        </div>
+      </div>
+      <div>
+        <div class="eyebrow">Notre engagement</div>
+        <h2>Un partenaire propreté qui s’adapte à votre organisation.</h2>
+        <p style="margin-top:18px">Nous construisons chaque prestation autour de votre environnement, de vos horaires, de votre niveau d’exigence et de vos contraintes opérationnelles.</p>
+        <div class="bullets">
+          <div class="bullet"><span class="check">✓</span><div><strong>Analyse précise des besoins</strong><p>Identification des zones, fréquences, contraintes et résultats attendus avant la mise en place.</p></div></div>
+          <div class="bullet"><span class="check">✓</span><div><strong>Organisation sur mesure</strong><p>Un plan d’intervention adapté au rythme de votre activité et à vos priorités.</p></div></div>
+          <div class="bullet"><span class="check">✓</span><div><strong>Contrôle et suivi</strong><p>Un suivi régulier pour maintenir une prestation stable, mesurable et durable.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section process" id="apropos">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Notre méthode</div>
+        <h2>Une mise en place simple en trois étapes.</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-head">
+            <div class="step-num">1</div>
+            <div class="step-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="4" width="14" height="16" rx="2"></rect>
+                <path d="M9 4.5h6M9 9h6M9 13h6"></path>
+              </svg>
+            </div>
+          </div>
+          <h3>Analyse du besoin</h3>
+          <p>Nous échangeons sur votre site, vos contraintes, vos horaires et les résultats que vous attendez.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-head">
+            <div class="step-num">2</div>
+            <div class="step-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3.5" y="5" width="17" height="15" rx="2"></rect>
+                <path d="M7 3v4M17 3v4M3.5 9.5h17M8 13h3M13 13h3"></path>
+              </svg>
+            </div>
+          </div>
+          <h3>Plan d’intervention</h3>
+          <p>Nous définissons l’organisation, la fréquence des passages et les moyens nécessaires à la prestation.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-head">
+            <div class="step-num">3</div>
+            <div class="step-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3l7 3v5c0 4.6-2.7 8-7 10-4.3-2-7-5.4-7-10V6l7-3z"></path>
+                <path d="M9 12l2 2 4-4"></path>
+              </svg>
+            </div>
+          </div>
+          <h3>Suivi qualité</h3>
+          <p>Nous suivons la prestation dans la durée afin d’ajuster l’organisation lorsque vos besoins évoluent.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-wrap">
+    <div class="container cta">
+      <div>
+        <div class="eyebrow" style="color:#8FD1FF">Parlons de votre besoin</div>
+        <h2>Besoin d’un partenaire propreté fiable ?</h2>
+        <p>Présentez-nous votre besoin et nous pourrons préparer une solution adaptée à votre environnement professionnel.</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn btn-light" href="#contact">Obtenir un devis →</a>
+        <a class="btn btn-whatsapp whatsapp-link" href="#">WhatsApp ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container contact-grid">
+      <div>
+        <div class="eyebrow">Contact</div>
+        <h2>Parlons de vos besoins.</h2>
+        <p style="margin-top:16px">Vous avez un besoin ponctuel ou régulier ? Décrivez-nous votre site et vos attentes. Notre équipe vous recontactera pour étudier une solution adaptée.</p>
+        <div class="contact-list">
+          <div class="contact-row"><span class="icon">✉</span><div><strong>Email</strong><a href="mailto:contact@anioclean.com"><span>contact@anioclean.com</span></a></div></div>
+          <div class="contact-row"><span class="icon">⌖</span><div><strong>Adresse</strong><span>662 B Rue des Jonchères, 69730 Genay, France</span></div></div>
+          <div class="contact-row"><span class="icon">☎</span><div><strong>Téléphone</strong><a href="tel:+33892233117"><span>08 92 23 31 17</span></a></div></div>
+          <div class="contact-row"><span class="icon">W</span><div><strong>WhatsApp</strong><span>Échangez directement avec notre équipe sur WhatsApp.</span></div></div>
+        </div>
+      </div>
+
+      <form id="quoteForm">
+        <div class="field-grid">
+          <div class="field"><label for="name">Nom / Société</label><input id="name" name="name" required placeholder="Votre nom ou société"></div>
+          <div class="field"><label for="phone">Téléphone</label><input id="phone" name="phone" placeholder="Votre numéro"></div>
+        </div>
+        <div class="field-grid">
+          <div class="field"><label for="email">Email</label><input id="email" type="email" name="email" required placeholder="vous@entreprise.fr"></div>
+          <div class="field"><label for="sector">Type de site</label>
+            <select id="sector" name="sector">
+              <option>Hôtel</option><option>Bureau</option><option>Chantier</option><option>Hangar / Entrepôt</option><option>Local commercial</option><option>Supermarché</option><option>Autre</option>
+            </select>
+          </div>
+        </div>
+        <div class="field"><label for="message">Votre besoin</label><textarea id="message" name="message" required placeholder="Décrivez le site, la surface, la fréquence souhaitée ou toute information utile."></textarea></div>
+        <button class="btn btn-primary" type="submit">Envoyer ma demande →</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="footer-brand" href="#accueil" aria-label="ANIOCLEAN - Accueil">
+          <img class="footer-logo" src="assets/anioclean-logo-horizontal-transparent.png" alt="ANIOCLEAN — La propreté professionnelle">
+        </a>
+        <p>Solutions de propreté professionnelle pour hôtels, bureaux, chantiers, entrepôts et espaces commerciaux.</p>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <div class="footer-links">
+          <a href="#accueil">Accueil</a>
+          <a href="#services">Services</a>
+          <a href="#secteurs">Secteurs</a>
+          <a href="#apropos">À propos</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <div class="footer-links">
+          <a href="mailto:contact@anioclean.com">contact@anioclean.com</a>
+          <a href="tel:+33892233117">08 92 23 31 17</a>
+          <a href="#contact">Demander un devis</a>
+          <a class="whatsapp-link" href="#">WhatsApp ↗</a>
+        </div>
+      </div>
+      <div>
+        <h4>Adresse</h4>
+        <p>662 B Rue des Jonchères<br>69730 Genay<br>France</p>
+      </div>
+    </div>
+    <div class="copyright">© 2026 ANIOCLEAN — La propreté professionnelle. Tous droits réservés.</div>
+  </div>
+</footer>
+
+<a class="wa-float whatsapp-link" href="#" aria-label="Contacter ANIOCLEAN sur WhatsApp">◉</a>
+
+<script>
+  // Replace with ANIOCLEAN's real WhatsApp number in international format, e.g. 33612345678
+  const WHATSAPP_NUMBER = "";
+
+  document.querySelectorAll(".whatsapp-link").forEach(link => {
+    link.addEventListener("click", e => {
+      if (!WHATSAPP_NUMBER) {
+        e.preventDefault();
+        alert("Le CTA WhatsApp est prêt. Il reste seulement à renseigner le numéro WhatsApp ANIOCLEAN.");
+        return;
+      }
+      const message = encodeURIComponent("Bonjour ANIOCLEAN, je souhaite obtenir des informations / un devis pour une prestation de nettoyage.");
+      link.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
+      link.target = "_blank";
+    });
+  });
+
+  document.getElementById("quoteForm").addEventListener("submit", e => {
+    e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    const subject = encodeURIComponent("Demande de devis ANIOCLEAN — " + (data.get("name") || "Nouveau contact"));
+    const body = encodeURIComponent(
+`Bonjour ANIOCLEAN,
+
+Nom / Société : ${data.get("name")}
+Téléphone : ${data.get("phone")}
+Email : ${data.get("email")}
+Type de site : ${data.get("sector")}
+
+Besoin :
+${data.get("message")}
+
+Cordialement`
+    );
+    window.location.href = `mailto:contact@anioclean.com?subject=${subject}&body=${body}`;
+  });
+
+  const menuBtn = document.getElementById("menuBtn");
+  const navLinks = document.getElementById("navLinks");
+  menuBtn.addEventListener("click", () => navLinks.classList.toggle("open"));
+  navLinks.querySelectorAll("a").forEach(a => a.addEventListener("click", () => navLinks.classList.remove("open")));
+</script>
+</body>
+</html>
